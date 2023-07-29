@@ -1,0 +1,207 @@
+<svg version="1.1"
+     width="600" height="400"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <symbol id="blank" height="10" width="10" viewBox="0 0 10 10">
+    <rect x="0" y="0" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+  </symbol>
+
+  <symbol id="baseShape01" height="20" width="20" viewBox="0 0 20 20">
+    <path d="
+        M -5,10
+        L 0,5
+        q 3.5,-3.5 10,-3.5
+        T 20,5
+        l 5,5 -5,5
+        L 15,10
+        q -1.5,-1.5 -5,-1.5
+        T 5,10
+        l -5,5
+        z
+      "
+      fill="cyan" stroke="black" stroke-width="1"
+    />
+    <path d="M 10,15 L 25,0 30,5 15,20 z" stroke="black" fill="cyan" stroke-width="1" />
+    <path d="M 0,15 L 5,10 20,25 15,30 z" stroke="black" fill="cyan" stroke-width="1" />
+    <rect x="0" y="0" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+    <rect x="10" y="10" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+    <rect x="10" y="0" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+  </symbol>
+
+  <symbol id="baseShape02" height="10" width="20" viewBox="0 0 20 10">
+    <path d="
+        M -5,1.5
+        L 17,1.5 
+        Q 18.5,1.5 18.5,3
+        L 18.5,15
+        L 11.5,15 11.5,10
+        q 0,-1.5 -1.5,-1.5
+        l -25,0
+        z
+      "
+      fill="cyan" stroke="black" stroke-width="1"
+    />
+    <rect x="0" y="0" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+    <rect x="10" y="0" height="10" width="10" stroke="black" stroke-opacity="20%" fill="none" />
+  </symbol>
+
+  <symbol id="tileS_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#baseShape02" transform="matrix( 1  0  0  1  -10  0 )" />
+  </symbol>
+
+  <symbol id="tileS_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileS_W" transform="matrix( -1  0  0  1  10  0 )" />
+  </symbol>
+
+  <symbol id="tileN_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileS_W" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileN_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileS_E" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileW_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#baseShape02" transform="matrix( 1  0  0  1  0 0 )" />
+  </symbol>
+
+  <symbol id="tileN_S" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileW_E" transform="matrix( 0  1  1  0  0 0 )" />
+  </symbol>
+
+  <symbol id="tileSW_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#baseShape01" transform="matrix( 1  0  0  1  0 0 )" />
+  </symbol>
+
+  <symbol id="tileNW_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSW_E" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileSE_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSW_E" transform="matrix(-1  0  0 1  10 0 )" />
+  </symbol>
+
+  <symbol id="tileNE_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSE_W" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileNE_S" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSW_E" transform="matrix( 0  1  1  0  0 0 )" />
+  </symbol>
+
+  <symbol id="tileNW_S" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNW_E" transform="matrix( 0  1  1  0  0 0 )" />
+  </symbol>
+
+  <symbol id="tileSW_N" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNW_S" transform="matrix( 1 0 0 -1 0 10 )" />
+  </symbol>
+
+  <symbol id="tileSE_N" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNE_S" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <!--
+  -->
+
+  <symbol id="tileSWx_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#baseShape01" transform="matrix(-1  0  0  1 20 0 )" />
+  </symbol>
+
+  <symbol id="tileNWx_E" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSWx_E" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileSEx_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSWx_E" transform="matrix(-1  0  0 1  10 0 )" />
+  </symbol>
+
+  <symbol id="tileNEx_W" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSEx_W" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileNEx_S" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSWx_E" transform="matrix( 0  1  1  0  0 0 )" />
+  </symbol>
+
+  <symbol id="tileNWx_S" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNWx_E" transform="matrix( 0  1  1  0  0 0 )" />
+  </symbol>
+
+  <symbol id="tileSWx_N" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNWx_S" transform="matrix( 1 0 0 -1 0 10 )" />
+  </symbol>
+
+  <symbol id="tileSEx_N" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileNEx_S" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <!--
+  -->
+
+  <symbol id="tileSWx_NE" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#baseShape01" transform="matrix(1 0 0 1 -10 -10 )" />
+  </symbol>
+
+  <symbol id="tileNWx_SE" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSWx_NE" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <symbol id="tileSEx_NW" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSWx_NE" transform="matrix(-1  0  0 1  10 0 )" />
+  </symbol>
+
+  <symbol id="tileNEx_SW" height="10" width="10" viewBox="0 0 10 10">
+    <use href="#tileSEx_NW" transform="matrix( 1  0  0 -1  0 10 )" />
+  </symbol>
+
+  <g
+    transform="
+      translate(10 100)
+      scale(4)
+    "
+  >
+    <use href="#tileS_E" x="0" y="0" />
+    <use href="#tileS_W" x="12" y="0" />
+    <use href="#tileN_W" x="24" y="0" />
+    <use href="#tileN_E" x="36" y="0" />
+    <use href="#tileW_E" x="48" y="0" />
+    <use href="#tileN_S" x="60" y="0" />
+
+    <use href="#tileSW_E" x="0" y="12" />
+    <use href="#tileNW_E" x="12" y="12" />
+    <use href="#tileSE_W" x="24" y="12" />
+    <use href="#tileNE_W" x="36" y="12" />
+
+    <use href="#tileSW_N" x="0"  y="24" />
+    <use href="#tileSE_N" x="12" y="24" />
+    <use href="#tileNE_S" x="24" y="24" />
+    <use href="#tileNW_S" x="36" y="24" />
+
+    <use href="#tileSWx_E" x="0" y="36" />
+    <use href="#tileNWx_E" x="12" y="36" />
+    <use href="#tileSEx_W" x="24" y="36" />
+    <use href="#tileNEx_W" x="36" y="36" />
+
+    <use href="#tileSWx_N" x="0"  y="48" />
+    <use href="#tileSEx_N" x="12" y="48" />
+    <use href="#tileNEx_S" x="24" y="48" />
+    <use href="#tileNWx_S" x="36" y="48" />
+
+    <use href="#tileSWx_NE" x="0"  y="60" />
+    <use href="#tileSEx_NW" x="12" y="60" />
+    <use href="#tileNEx_SW" x="24" y="60" />
+    <use href="#tileNWx_SE" x="36" y="60" />
+  </g>
+
+  <g
+    transform="
+      translate(10 10)
+      scale(4)
+    "
+  >
+    <use href="#baseShape02" transform="matrix( 1  0  0  1  0  0 )" />
+    <use href="#baseShape01" transform="matrix( 1  0  0  1  20  0 )" />
+  </g>
+
+</svg>
