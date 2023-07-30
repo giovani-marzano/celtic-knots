@@ -1,0 +1,75 @@
+{
+  "tileSize": 10,
+  "sockets": {
+    "0": "0"
+    ,"a": "a"
+    ,"b": "B"
+  },
+  "tiles": {
+    "blank": {
+      "sockets": {
+        "N":"0"
+        ,"W":"0","E":"0"
+        ,"S":"0"
+      }
+    }
+    ,"tileS_E": {
+      "sockets": {
+        "N":"0"
+        ,"W":"0","E":"a"
+        ,"S":"a"
+      }
+      ,"derivatives": [
+        "rot1", "rot2", "rot3"
+      ]
+    }
+    ,"tileW_E": {
+      "sockets": {
+        "N":"0"
+        ,"W":"a","E":"a"
+        ,"S":"0"
+      }
+      ,"derivatives": [
+        "rot1"
+      ]
+    }
+    ,"tileSW_E": {
+      "sockets": {
+        "N":"0"
+        ,"W":["0","b"],"E":"a"
+        ,"S":["b","0"]
+      }
+      ,"derivatives": [
+        "rot1", "rot2", "rot3"
+        ,"flipWE"
+        ,["flipWE","rot1"]
+        ,["flipWE","rot2"]
+        ,["flipWE","rot3"]
+      ]
+    }
+    ,"tileSWx_E": {
+      "sockets": {
+        "N":"0"
+        ,"W":["0","B"],"E":"a"
+        ,"S":["B","0"]
+      }
+      ,"derivatives": [
+        "rot1", "rot2", "rot3"
+        ,"flipWE"
+        ,["flipWE","rot1"]
+        ,["flipWE","rot2"]
+        ,["flipWE","rot3"]
+      ]
+    }
+    ,"tileSWx_NE": {
+      "sockets": {
+        "N":["0","b"]
+        ,"W":["0","B"],"E":["b","0"]
+        ,"S":["B","0"]
+      }
+      ,"derivatives": [
+        "rot1", "rot2", "rot3"
+      ]
+    }
+  }
+}
