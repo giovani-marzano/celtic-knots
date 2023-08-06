@@ -63,3 +63,7 @@ export function flipX(): HomMatrix {
 export function flipY(): HomMatrix {
   return new HomMatrix(1,0,0,-1,0,0);
 }
+
+export function translation(x: number, y: number): HomMatrix {
+  return new HomMatrix(1,0,0,1,x,y);
+}
