@@ -74,7 +74,7 @@
     <use href="#baseShape01" transform="matrix( 1  0  0  1  20  0 )" />
   </g>
 
-  <g id="gr_tiles" transform="matrix(4 0 0 4 10 10)"></g>
+  <g id="gr_tiles" transform="matrix(4 0 0 4 10 100)"></g>
 
   <g id="gr_grid" transform="matrix(4 0 0 4 10 10)"></g>
   <script type="module" href="main.ts" />

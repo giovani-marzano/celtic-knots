@@ -13,10 +13,10 @@
         ,"S":"0"
       }
     }
-    ,"tileS_E": {
+    ,"tileS_W": {
       "sockets": {
         "N":"0"
-        ,"W":"0","E":"a"
+        ,"W":"a","E":"0"
         ,"S":"a"
       }
       ,"derivatives": [
