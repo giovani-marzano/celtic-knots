@@ -41,10 +41,7 @@
       }
       ,"derivatives": [
         "rot1", "rot2", "rot3"
-        ,"flipWE"
-        ,["flipWE","rot1"]
-        ,["flipWE","rot2"]
-        ,["flipWE","rot3"]
+        ,["flipWE",["id","rot1","rot2","rot3"]]
       ]
     }
     ,"tileSWx_E": {
@@ -55,10 +52,7 @@
       }
       ,"derivatives": [
         "rot1", "rot2", "rot3"
-        ,"flipWE"
-        ,["flipWE","rot1"]
-        ,["flipWE","rot2"]
-        ,["flipWE","rot3"]
+        ,["flipWE",["id","rot1","rot2","rot3"]]
       ]
     }
     ,"tileSWx_NE": {

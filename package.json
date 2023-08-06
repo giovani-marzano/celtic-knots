@@ -2,7 +2,7 @@
   "name": "celtic-knots",
   "version": "1.0.0",
   "description": "",
-  "sorce": "src/index.html",
+  "source": "src/tiles.svg",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
