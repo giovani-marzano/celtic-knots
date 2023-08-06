@@ -14,12 +14,12 @@ import {
   rotation90,
 } from '../HomMatrix';
 
-export function generateTiles(tilingSpec: TilingSpec) : TilingSpecNormalized {
+export function generateTiles(
+  tilingSpec: TilingSpec
+) : TilingSpecNormalized {
   const fullSockets = expandSockets(tilingSpec.sockets);
 
   const tiles = normalizeTiles(tilingSpec, fullSockets);
-
-  tiles.forEach((t) => console.log(t.id));
 
   return {
     tileSize: tilingSpec.tileSize,
@@ -215,8 +215,12 @@ function rotateTile90(
   const newTile = copyTile(tile);
   newTile.id = `${tile.id}-rot${numRotations}`;
 
-  // TODO:
+  const rotateMatrix = rotation90();
+
   for (let i = 0; i < numRotations; i++) {
+    newTile.outSockets = rotateSockets(newTile.outSockets);
+    newTile.inSockets = rotateSockets(newTile.inSockets);
+    newTile.transform = rotateMatrix.after(newTile.transform);
   }
 
   return newTile;
@@ -228,7 +232,10 @@ function flipTileNS(
   const newTile = copyTile(tile);
   newTile.id = `${tile.id}-flipNS`;
 
-  // TODO:
+  newTile.outSockets = flipNS_Sockets(newTile.outSockets);
+  newTile.inSockets = flipNS_Sockets(newTile.inSockets);
+  newTile.transform = flipY().after(newTile.transform);
+
   return newTile;
 }
 
@@ -238,8 +245,55 @@ function flipTileWE(
   const newTile = copyTile(tile);
   newTile.id = `${tile.id}-flipWE`;
 
-  // TODO:
+  newTile.outSockets = flipWE_Sockets(newTile.outSockets);
+  newTile.inSockets = flipWE_Sockets(newTile.inSockets);
+  newTile.transform = flipX().after(newTile.transform);
+
   return newTile;
+}
+
+function flipNS_Sockets(
+  sockets: TileSocketSpecNormalized,
+): TileSocketSpecNormalized {
+  return {
+    N: sockets.S,
+    S: sockets.N,
+    W: reverseSocket(sockets.W),
+    E: reverseSocket(sockets.E),
+  };
+}
+
+function flipWE_Sockets(
+  sockets: TileSocketSpecNormalized,
+): TileSocketSpecNormalized {
+  return {
+    N: reverseSocket(sockets.N),
+    S: reverseSocket(sockets.S),
+    W: sockets.E,
+    E: sockets.W,
+  };
+}
+
+/**
+ * Rotate socket definitions 90 degrees clockwise
+ */
+function rotateSockets(
+  sockets: TileSocketSpecNormalized,
+): TileSocketSpecNormalized {
+  return {
+    N: reverseSocket(sockets.W),
+    S: reverseSocket(sockets.E),
+    W: sockets.S,
+    E: sockets.N,
+  };
+}
+
+function reverseSocket(
+  socket: string,
+): string {
+  return collapseBorderSocket(
+    expandBorderSocket(socket).reverse(),
+  );
 }
 
 function copyTile(tile: TileSpecNormalized): TileSpecNormalized {
